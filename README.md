@@ -3,7 +3,7 @@
 Tasks To complete
 
 * Request Data
-  * Request NBA teams data from input.json endpoint using networking framework of your choice.
+  * Request NBA teams data from [input.json](https://raw.githubusercontent.com/scoremedia/nba-team-viewer/master/input.json) endpoint using networking framework of your choice.
   * Implement Network caching to cache the response.
 * The Team List screen
   * Displays all of the teams data in alphabetical order

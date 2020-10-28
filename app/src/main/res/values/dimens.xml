@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="half_padding">4dp</dimen>
+    <dimen name="standard_padding">8dp</dimen>
+
+    <dimen name="cover_height">160dp</dimen>
+    <dimen name="backdrop_title">30dp</dimen>
+    <dimen name="backdrop_subtitle">32dp</dimen>
+    <dimen name="detail_backdrop_height">250dp</dimen>
+</resources>

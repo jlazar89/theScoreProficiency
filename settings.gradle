@@ -1,0 +1,2 @@
+rootProject.name='Proficiency Exercise'
+include ':app'

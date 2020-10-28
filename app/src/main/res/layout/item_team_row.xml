@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="dataItem"
+            type="com.thescore.proficiencyexercise.data.entity.TeamResponse" />
+
+        <variable
+            name="clickHandler"
+            type="com.thescore.proficiencyexercise.widgets.listeners.ItemClickHandler" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardRow"
+        style="@style/Widget.MaterialComponents.CardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/standard_padding"
+        android:onClick="@{(view) -> clickHandler.onItemClick(view, dataItem)}"
+        android:orientation="vertical"
+        android:theme="@style/Theme.MaterialComponents.Light">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="@dimen/standard_padding"
+                android:gravity="start"
+                android:text='@{dataItem.full_name}'
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivImage"
+                tools:text="Name" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvWins"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/standard_padding"
+                android:lines="1"
+                android:paddingBottom="@dimen/half_padding"
+                android:text="@{`W ` + Integer.toString(dataItem.wins)}"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivImage"
+                tools:text="W 5" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvlosses"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/standard_padding"
+                android:lines="1"
+                android:paddingBottom="@dimen/half_padding"
+                android:text="@{`L ` + Integer.toString(dataItem.losses)}"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvWins"
+                tools:text="L 5" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>
